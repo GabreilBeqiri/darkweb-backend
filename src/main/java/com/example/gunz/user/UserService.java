@@ -38,8 +38,7 @@ public class UserService {
     }
     public ResponseEntity<User> saveUser(RegisterUserDto registerUserDto){
         Optional<User> userByIdNumber = userRepository
-                .findUserByIdNumber(registerUserDto.getPassword(),registerUserDto.getName())
-                .stream().findAny();
+                .findUserByIdNumber(registerUserDto.getPassword(),registerUserDto.getName()).stream().findAny();
 
         if(userByIdNumber.isEmpty()) {
             User user = new User();

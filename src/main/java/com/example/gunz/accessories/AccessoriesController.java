@@ -20,7 +20,7 @@ public class AccessoriesController {
     private AccessoriesService accessoriesService;
 
     public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/src/main/resources/static";
-    @PostMapping("/add")
+    @RequestMapping("/api/v1/acc")
     public ResponseEntity<Accessories> saveaccessories(@RequestBody RegisterAccessoriesDto registerAccessoriesDto ){
         return accessoriesService.saveAccessories(registerAccessoriesDto);
     }
